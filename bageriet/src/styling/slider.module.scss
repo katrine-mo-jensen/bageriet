@@ -1,0 +1,23 @@
+.slider {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    img{
+        width: 100%;
+    }
+    div {
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 12fr 1fr;
+        align-items: center;
+        h1{
+        text-align: center;
+        color: white;
+
+        }
+    }
+}
