@@ -1,3 +1,5 @@
+@use "./variables.scss" as *;
+
 .slider {
     display: grid;
     justify-content: center;
@@ -6,6 +8,22 @@
     position: relative;
     img{
         width: 100%;
+    }
+    section{
+        position: relative;
+        display: grid;
+        grid-template-columns: auto;
+        width: 50%;
+        margin: auto;
+        span{
+            width: $spacing-medium;
+            height: $spacing-medium;
+            border-radius: 50%;
+            background-color: black;
+        }
+        span::after{
+            content: " ";
+        }
     }
     div {
         position: absolute;
