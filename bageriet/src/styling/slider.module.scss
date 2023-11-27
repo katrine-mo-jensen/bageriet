@@ -11,15 +11,17 @@
     }
     section{
         position: relative;
-        display: grid;
-        grid-template-columns: auto;
+        display: flex;
+        justify-content: center;
         width: 50%;
         margin: auto;
+        bottom: 200%;
+        gap: 1%;
         span{
             width: $spacing-medium;
             height: $spacing-medium;
             border-radius: 50%;
-            background-color: black;
+            background-color: white;
         }
         span::after{
             content: " ";
@@ -35,7 +37,13 @@
         h1{
         text-align: center;
         color: white;
-
+        }
+        .leftArrow {
+            transform: rotate(180deg);
+        }
+        .leftArrow, .rightArrow {
+            width: 70%;
+            height: 70%;
         }
     }
 }
