@@ -2,7 +2,7 @@ import { useState } from "react";
 import slide1 from "../assets/images/slide1.jpg";
 import slide2 from "../assets/images/slide2.jpg";
 import slide3 from "../assets/images/slide3.jpg";
-import arrow from "../assets/images/chevron.png"
+import arrow from "../assets/images/chevron.png";
 
 import style from "../styling/slider.module.scss";
 
@@ -30,24 +30,31 @@ export function Slider() {
     setSlideIndex(index);
   };
 
-  console.log("SlideIndex", slideIndex);
-
   return (
     <header className={style.slider}>
       <div>
         <button onClick={() => previousSlide()}>
-            <img className={style.leftArrow} src={arrow} alt="left pointing arrow" />
+          <img
+            className={style.leftArrow}
+            src={arrow}
+            alt="left pointing arrow"
+          />
         </button>
         <h1>Vi elsker at lave brød</h1>
         <button onClick={() => nextSlide()}>
-        <img className={style.rightArrow} src={arrow} alt="right pointing arrow" />
+          <img
+            className={style.rightArrow}
+            src={arrow}
+            alt="right pointing arrow"
+          />
         </button>
       </div>
       <img src={sliderArray[slideIndex]} alt="" />
       <section>
         {sliderArray.map((item, index) => {
           return (
-            <span key={index}
+            <span
+              key={index}
               style={
                 slideIndex === index
                   ? { backgroundColor: "rgb(129,120,113)" }
