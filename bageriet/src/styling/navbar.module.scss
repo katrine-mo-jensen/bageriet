@@ -3,6 +3,7 @@
 .navbar {
   width: 100%;
   background-color: $color-nav-blue;
+
   ul {
     width: 40%;
     margin: auto;
@@ -23,6 +24,8 @@
         font-size: 2.4rem;
         color: white;
         font-family: "Lobster Two", sans-serif;
+        font-weight: lighter;
+        font-style: italic;
       }
     }
   }

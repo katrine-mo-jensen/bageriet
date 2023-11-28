@@ -1,3 +1,5 @@
+import style from "../styling/footer.module.scss"
+
 export function Footer() {
   return (
     <footer>
