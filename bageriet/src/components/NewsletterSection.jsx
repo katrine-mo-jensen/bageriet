@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export function Newsletter() {
+  useEffect(() => {
+    
+  })
   const [email, setEmail] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
 

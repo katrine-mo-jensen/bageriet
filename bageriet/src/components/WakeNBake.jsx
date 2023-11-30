@@ -6,8 +6,8 @@ export function WakeNBake() {
   const { data } = useFetch(url);
 
   const shuffleArray = (data) => {
-    if (!data || !data.items) return []; // Check if data or data.items is undefined/null
-    let shuffledData = [...data.items]; // Create a copy of the array
+    if (!data || !data.items) return []; 
+    let shuffledData = [...data.items]; 
     for (let i = shuffledData.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffledData[i], shuffledData[j]] = [shuffledData[j], shuffledData[i]];
