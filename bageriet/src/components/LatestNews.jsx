@@ -1,4 +1,5 @@
 import { useFetch } from "./UseFetch";
+import style from "../styling/latestnews.module.scss"
 
 export function LatestNews() {
   const url = "https://api.mediehuset.net/bakeonline/news";
@@ -8,8 +9,8 @@ export function LatestNews() {
 
   const latestArticles = sortedData?.slice(0, 3);
   return (
-    <section>
-      <h2>Vi elsker lækkert brød!</h2>
+    <section className={style.container}>
+      <h2>Vi elsker lækkert! brød</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi facilis
         quae in omnis quisquam enim! Odit minus rerum molestias corporis <br />

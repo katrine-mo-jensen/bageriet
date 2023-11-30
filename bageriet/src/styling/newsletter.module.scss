@@ -1,0 +1,17 @@
+.newsletterContainer {
+  background-image: url("../assets/images/newsletterbg.jpg");
+  section {
+    width: 1200px;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    h2 {
+      font-style: italic;
+      font-family: "Lobster Two", sans-serif;
+      color: white;
+    }
+    p {
+      color: white;
+    }
+  }
+}

@@ -2,8 +2,12 @@
 
 .navbar {
   width: 100%;
-  background-color: $color-nav-blue;
 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: $color-nav-blue;
   ul {
     width: 40%;
     margin: auto;

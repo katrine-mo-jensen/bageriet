@@ -1,5 +1,6 @@
 import { useFetch } from "./UseFetch";
 import { Link } from "react-router-dom";
+import style from "../styling/wakenbake.module.scss"
 
 export function WakeNBake() {
   const url = "https://api.mediehuset.net/bakeonline/products";
@@ -20,7 +21,7 @@ export function WakeNBake() {
   const randomProducts = shuffledData.slice(0, 8);
 
   return (
-    <section>
+    <section className={style.wakenbakeContainer}>
       <h2>Nyeste bagværk</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod enim

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import style from "../styling/newsletter.module.scss"
 
 export function Newsletter() {
   useEffect(() => {
@@ -24,7 +25,8 @@ export function Newsletter() {
   }
 
   return (
-    <>
+    <div className={style.newsletterContainer}>
+    <section >
       <h2>Tilmeld dig vores nyhedsbrev</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi facilis
@@ -39,6 +41,7 @@ export function Newsletter() {
         />
         <button type="submit">Tilmeld</button>
       </form>
-    </>
+    </section>
+    </div>
   );
 }

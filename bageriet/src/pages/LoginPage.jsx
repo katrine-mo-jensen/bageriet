@@ -1,5 +1,3 @@
-export function LoginPage () {
-    return (
-        <div>LoginPage</div>
-    )
-}
+export const LoginPage = () => {
+  return <section>LoginPage</section>;
+};
