@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { useFetch } from "../components/UseFetch";
-import { Link } from "react-router-dom"; // Assuming you're using React Router
+import { Link } from "react-router-dom";
 
 export function ProductPage() {
   const [categories, setCategories] = useState([]);
@@ -13,8 +12,8 @@ export function ProductPage() {
       .then((res) => res.json())
       .then((data) => {
         if (data && data.status === "Ok") {
-          setCategories(data.items); // Set categories to the 'items' array from the response
-          console.log("Categories", data.items); // Log the fetched categories
+          setCategories(data.items);
+          console.log("Categories", data.items);
         } else {
           console.error("Error fetching categories:", data.error);
         }
@@ -30,8 +29,8 @@ export function ProductPage() {
       .then((res) => res.json())
       .then((data) => {
         if (data && data.status === "Ok") {
-          setSelectedCategoryData(data.item); // Set selected category data
-          console.log("Selected Category Data", data.item); // Log the fetched category data
+          setSelectedCategoryData(data.item);
+          console.log("Selected Category Data", data.item);
         } else {
           console.error("Error fetching selected category data:", data.error);
         }
@@ -70,7 +69,6 @@ export function ProductPage() {
         <div>
           {selectedCategoryData && (
             <div>
-              
               <ul>
                 {selectedCategoryData.products.map((product) => (
                   <li key={product.id}>
@@ -78,9 +76,7 @@ export function ProductPage() {
                     <p>{product.num_comments} 💬</p>
                     <h4>{product.title}</h4>
                     <p>{product.teaser}</p>
-                    
                     <Link to={`/products/${product.id}`}>See mere</Link>
-                    {/* Add other relevant product details */}
                   </li>
                 ))}
               </ul>
