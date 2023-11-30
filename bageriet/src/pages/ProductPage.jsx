@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
 import { useFetch } from "../components/UseFetch";
-
+import { Link } from "react-router-dom"; // Assuming you're using React Router
 
 export function ProductPage() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("1");
   const [selectedCategoryData, setSelectedCategoryData] = useState(null);
-
-  const url = `https://api.mediehuset.net/bakeonline/categories/${selectedCategory}`;
-  const { data: categoriesData } = useFetch(url);
-  console.log("Products in the category", categoriesData);
 
   useEffect(() => {
     const urlCategories = "https://api.mediehuset.net/bakeonline/categories";
@@ -29,17 +25,20 @@ export function ProductPage() {
   }, []);
 
   useEffect(() => {
-    // Fetch data for the selected category
-    const fetchCategoryData = async () => {
-      const response = await fetch(
-        `https://api.mediehuset.net/bakeonline/categories/${selectedCategory}`
-      );
-      const data = await response.json();
-      setSelectedCategoryData(data);
-      console.log("Selected Category Data", data);
-    };
-
-    fetchCategoryData();
+    const urlCategoryData = `https://api.mediehuset.net/bakeonline/categories/${selectedCategory}`;
+    fetch(urlCategoryData)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.status === "Ok") {
+          setSelectedCategoryData(data.item); // Set selected category data
+          console.log("Selected Category Data", data.item); // Log the fetched category data
+        } else {
+          console.error("Error fetching selected category data:", data.error);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching selected category data:", error);
+      });
   }, [selectedCategory]);
 
   const handleCategoryClick = (categoryId) => {
@@ -68,15 +67,26 @@ export function ProductPage() {
             ))}
           </ul>
         </aside>
-        <section>
+        <div>
           {selectedCategoryData && (
-            <section>
-              <h3>{selectedCategoryData.title}</h3>
-              <p>ID: {selectedCategoryData.id}</p>
-              {/* Display other relevant details here */}
-            </section>
+            <div>
+              
+              <ul>
+                {selectedCategoryData.products.map((product) => (
+                  <li key={product.id}>
+                    <img src={product.image.fullpath} alt={product.title} />
+                    <p>{product.num_comments} 💬</p>
+                    <h4>{product.title}</h4>
+                    <p>{product.teaser}</p>
+                    
+                    <Link to={`/products/${product.id}`}>See mere</Link>
+                    {/* Add other relevant product details */}
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
-        </section>
+        </div>
       </section>
     </section>
   );
