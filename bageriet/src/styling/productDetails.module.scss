@@ -1,0 +1,63 @@
+.detailWrapper {
+  max-width: 1200px;
+  margin: auto;
+  .path {
+    border: solid black 1px;
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    span {
+      font-weight: bold;
+    }
+  }
+  h2 {
+    text-transform: uppercase;
+    padding-bottom: 20px;
+  }
+  .name {
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    .like {
+      border: solid black 1px;
+      text-align: center;
+      width: 200px;
+      padding: 10px;
+    }
+  }
+
+  .container {
+    display: flex;
+    .directions {
+      img {
+        width: 20%;
+      }
+      p {
+        padding-right: 50px;
+        margin-bottom: 20px;
+      }
+    }
+    .ingredients {
+      ul {
+        list-style-type: none;
+        li {
+          border: solid black 1px;
+          margin-bottom: 5px;
+          width: 300px;
+          text-align: center;
+          padding: 15px;
+        }
+      }
+    }
+  }
+  .comments {
+    border: solid black 1px;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

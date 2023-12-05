@@ -1,0 +1,50 @@
+.productWrapper {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+
+  h2 {
+    font-style: italic;
+    font-family: "Lobster Two", sans-serif;
+    padding-bottom: 20px;
+    padding-top: 5%;
+  }
+  p {
+    padding-bottom: 5%;
+  }
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    aside {
+      grid-column: 1 / 2;
+    }
+    ul {
+      list-style-type: none;
+    }
+    section {
+      grid-column: 2 / 3;
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        li {
+          img {
+            width: 100%;
+          }
+          h3 {
+            text-transform: uppercase;
+            padding-bottom: 15px;
+          }
+          button {
+            background-color: rgb(255, 255, 255);
+            height: 40px;
+            width: 200px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

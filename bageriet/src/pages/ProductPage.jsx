@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import style from "../styling/product.module.scss";
 
 export function ProductPage() {
   const [categories, setCategories] = useState([]);
@@ -45,44 +46,47 @@ export function ProductPage() {
   };
 
   return (
-    <section>
+    <section className={style.productWrapper}>
       <h2>Vores elskede bagværk</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sequi
         fuga vel impedit facilis rem quidem ducimus <br /> iusto culpa tempore.
         Suscipit nobis quisquam in nemo.
       </p>
-      <section>
+      <section className={style.gridContainer}>
         <aside>
           <ul>
             {categories.map((item) => (
               <li
                 key={item.id}
                 onClick={() => handleCategoryClick(item.id)}
-                style={{ cursor: "pointer" }}
+                style={{
+                  cursor: "pointer",
+                  fontWeight: selectedCategory === item.id ? "bold" : "normal",
+                }}
               >
                 {item.title}
               </li>
             ))}
           </ul>
         </aside>
-        <div>
+        <section>
           {selectedCategoryData && (
-            <div>
-              <ul>
-                {selectedCategoryData.products.map((product) => (
-                  <li key={product.id}>
-                    <img src={product.image.fullpath} alt={product.title} />
-                    <p>{product.num_comments} 💬</p>
-                    <h4>{product.title}</h4>
-                    <p>{product.teaser}</p>
-                    <Link to={`/products/${product.id}`}>See mere</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul>
+              {selectedCategoryData.products.map((product) => (
+                <li key={product.id}>
+                  <img src={product.image.fullpath} alt={product.title} />
+                  <p>{product.num_comments} 💬</p>
+                  <h4>{product.title}</h4>
+                  <p>{product.teaser.substring(0, 100) + "..."}</p>
+                  <Link to={`/products/${product.id}`}>
+                    <button>See mere</button>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           )}
-        </div>
+        </section>
       </section>
     </section>
   );

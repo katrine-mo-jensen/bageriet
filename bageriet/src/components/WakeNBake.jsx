@@ -5,20 +5,11 @@ import style from "../styling/wakenbake.module.scss"
 export function WakeNBake() {
   const url = "https://api.mediehuset.net/bakeonline/products";
   const { data } = useFetch(url);
+  // console.log(data)
 
-  const shuffleArray = (data) => {
-    if (!data || !data.items) return []; 
-    let shuffledData = [...data.items]; 
-    for (let i = shuffledData.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledData[i], shuffledData[j]] = [shuffledData[j], shuffledData[i]];
-    }
-    return shuffledData;
-  };
+  const sortedData = data?.items.sort((a, b) => b.created - a.created);
 
-  const shuffledData = shuffleArray(data);
-
-  const randomProducts = shuffledData.slice(0, 8);
+  const latestArticles = sortedData?.slice(0, 8);
 
   return (
     <section className={style.wakenbakeContainer}>
@@ -31,9 +22,10 @@ export function WakeNBake() {
         soluta.
       </p>
       <section>
-        {randomProducts?.map((item, index) => (
+        {latestArticles?.map((item, index) => (
           <article key={index}>
             <img src={item.image.fullpath} alt={item.title} />
+            <p>{item.num_comments} 💬</p>
             <h3>{item.title}</h3>
             <p>{item.teaser}</p>
             <Link to={`/products/${item.id}`}>
