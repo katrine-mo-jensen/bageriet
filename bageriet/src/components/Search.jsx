@@ -21,9 +21,9 @@ export const Search = () => {
 
   useEffect(() => {
     if (inputText === "") {
-      setSearchData([]); // Clear searchData when input is empty
+      setSearchData([]); 
     } else {
-      search(); // Perform search when there is input
+      search(); 
     }
   }, [inputText, data]);
 
