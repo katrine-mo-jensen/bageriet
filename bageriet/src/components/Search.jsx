@@ -48,9 +48,9 @@ export const Search = () => {
       <section className={style.productOverview}>
         <ul >
           {searchData.map((item) => (
-            <Link to={`/products/${item.id}`} key={item.id}>
+            <li><Link to={`/products/${item.id}`} key={item.id}>
               {item.title}
-            </Link>
+            </Link></li>
           ))}
         </ul>
       </section>
