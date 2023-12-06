@@ -21,13 +21,13 @@ export function WakeNBake() {
         Aliquid magnam cumque, aspernatur repudiandae voluptas nisi praesentium
         soluta.
       </p>
-      <section>
+      <section className={style.box}>
         {latestArticles?.map((item, index) => (
           <article key={index}>
             <img src={item.image.fullpath} alt={item.title} />
             <p>{item.num_comments} 💬</p>
             <h3>{item.title}</h3>
-            <p>{item.teaser}</p>
+            <p>{item.teaser.substring(0, 100)}</p>
             <Link to={`/products/${item.id}`}>
               <button>Se mere</button>
             </Link>

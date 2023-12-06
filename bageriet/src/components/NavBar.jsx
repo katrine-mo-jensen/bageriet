@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import style from "../styling/navbar.module.scss";
+import { Search } from "./Search";
 
 export function NavBar() {
   return (
@@ -21,6 +22,7 @@ export function NavBar() {
           <NavLink to="/login">Login</NavLink>
         </li>
       </ul>
+      <Search />
     </nav>
   );
 }
