@@ -43,7 +43,7 @@ export const Search = () => {
           value={inputText}
           onChange={(event) => setInputText(event.target.value)}
         />
-        <button onClick={search}>Search</button>
+        <button onClick={search}>Søg</button>
       </div>
       <section className={style.productOverview}>
         <ul >
