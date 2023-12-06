@@ -22,7 +22,7 @@ export function LatestNews() {
           <article key={index}>
             <img src={item.image} alt={item.title} />
             <h3>{item.title}</h3>
-            <p>{item.teaser}</p>
+            <p>{item.teaser.substring(0, 100) + "..."}</p>
           </article>
         ))}
       </section>

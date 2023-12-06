@@ -16,8 +16,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     article {
+      margin-bottom: 100px;
       img {
         border-radius: 100%;
+        width: 60%;
         padding-bottom: 30px;
       }
       h3 {
